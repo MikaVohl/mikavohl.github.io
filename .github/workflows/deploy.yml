@@ -7,7 +7,7 @@ on:
 permissions:
   contents: read
   pages: write
-  id-token: write   # needed for OIDC deploy
+  id-token: write
 
 jobs:
   build:
