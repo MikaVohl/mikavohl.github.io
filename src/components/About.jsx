@@ -19,7 +19,7 @@ export default function About() {
         <img
           src="/images/MikaVohl2.jpg"
           alt="Mika second portrait"
-          className="mx-auto mt-7 w-full h-72 rounded-[10%] object-cover"
+          className="mx-auto mt-7 w-full h-96 rounded-[10%] object-cover"
         />
       </div>
 

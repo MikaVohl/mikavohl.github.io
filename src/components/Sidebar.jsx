@@ -13,7 +13,7 @@ export default function Sidebar() {
           href={href}
           target="_blank"
           rel="noreferrer"
-          className="zoom text-6xl opacity-50 hover:opacity-100"
+          className="zoom text-4xl sm:text-6xl opacity-50 hover:opacity-100"
         >
           {icon}
         </a>
