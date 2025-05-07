@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .zoom {
+    @apply transition-transform duration-300;    /* dropped ease-in-out */
+  }
+  .zoom:hover {
+    @apply scale-105;
+  }
+}
+
+@layer components {
+  .nav-link {
+    @apply uppercase tracking-[0.21em] text-gray-500 px-[2vw] py-[1vh] relative inline-block;
+  }
+  .nav-link:hover {
+    @apply text-black;
+  }
+
+  /* the little underline */
+  .nav-link::after {
+    content: "";
+    /* block so width works, and absolute relative to the link */
+    @apply block absolute bottom-[3px] left-1/2 w-0 h-[2px] bg-black
+           transition-all duration-300 ease-in-out;
+  }
+  /* on hover grow it full-width and reset left */
+  .nav-link:hover::after {
+    @apply left-0 w-full;
+  }
+}
