@@ -1,6 +1,6 @@
 export default function Intro() {
   return (
-    <section id="intro" className="scroll-mt-[250px] py-20 text-center md:py-32">
+    <section id="intro" className="scroll-mt-[250px] py-32 text-center md:py-52">
       <div className="mx-16 flex max-w-5xl flex-col-reverse items-center gap-8 md:flex-row md:gap-16">
         <div className="text-left">
           <h2 className="text-5xl font-semibold md:text-6xl">Mika Vohl</h2>
@@ -11,7 +11,7 @@ export default function Intro() {
         <img
           src="/images/MikaVohl.jpg"
           alt="Mika Vohl portrait"
-          className="w-[22rem] rounded-[10%]"
+          className="w-[13rem] md:w-[22rem] rounded-[10%]"
         />
       </div>
     </section>

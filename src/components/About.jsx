@@ -1,6 +1,6 @@
 export default function About() {
   return (
-    <section id="about" className="scroll-mt-[calc(9vh+35px)] py-24 text-center">
+    <section id="about" className="scroll-mt-[calc(9vh+35px)] py-20 md:py-24 text-center">
       <h2 className="mb-10 text-5xl font-medium">About Me</h2>
 
       {/* DESKTOP layout */}
