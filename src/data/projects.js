@@ -1,5 +1,11 @@
 const projects = [
   {
+    title: 'CNN Game of Life',
+    stack: 'Python / Pytorch / Typescript',
+    href: 'https://life.mikavohl.ca',
+    img: '/images/game-of-life-CNN.png',
+  },
+  {
     title: 'Handwritten Code IDE',
     stack: 'Typescript / Python',
     href: 'https://github.com/MikaVohl/write-and-run',

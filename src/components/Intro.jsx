@@ -8,12 +8,28 @@ export default function Intro() {
             Computer Science student at McGill University and Fullstack Developer
           </h3>
         </div>
-        <img
-          src="/images/MikaVohl.jpg"
-          alt="Mika Vohl portrait"
-          className="w-[13rem] md:w-[22rem] rounded-[10%]"
-        />
+        <picture>
+          {/* WebP first */}
+          <source
+            type="image/webp"
+            srcSet="/images/MikaVohl_1x.webp 1x, /images/MikaVohl_2x.webp 2x"
+          />
+          {/* JPEG fallback */}
+          <source
+            type="image/jpeg"
+            srcSet="/images/MikaVohl_1x.jpg 1x, /images/MikaVohl_2x.jpg 2x"
+          />
+          <img
+            src="/images/MikaVohl_2x.jpg"
+            width="352"
+            height="352"
+            alt="Mika Vohl portrait"
+            className="w-[13rem] md:w-[22rem] rounded-[10%]"
+            loading="lazy"
+            decoding="async"
+          />
+        </picture>
       </div>
     </section>
-  )
+  );
 }
