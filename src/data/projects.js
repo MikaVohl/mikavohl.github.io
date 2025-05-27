@@ -1,6 +1,6 @@
 const projects = [
   {
-    title: 'CNN Game of Life',
+    title: 'Neural Net Game of Life',
     stack: 'Python / Pytorch / Typescript',
     href: 'https://life.mikavohl.ca',
     img: '/images/game-of-life-CNN.png',

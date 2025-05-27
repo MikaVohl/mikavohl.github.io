@@ -7,11 +7,8 @@ export default function Projects() {
 
       <div className="grid gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
         {projects.map((p) => (
-          <a href={p.href} target="_blank">
-            <div
-              key={p.id}
-              className="rounded-lg border border-gray-200 bg-white p-6 shadow-sm"
-            >
+          <a key={p.id} href={p.href} target="_blank" rel="noreferrer">
+            <div className="rounded-lg border border-gray-200 bg-white px-6 py-5 shadow-sm">
               <h3 className="text-2xl font-semibold">
                 {p.title}
               </h3>
@@ -25,6 +22,13 @@ export default function Projects() {
                   className="h-full w-full object-contain"
                 />
               </div>
+              <p className="h-6 min-h-[1.5rem] font-medium mt-1 text-gray-600">
+                {p.href.includes("mikavohl.ca") ? "Try it at " : "View it on "}
+                <span className="text-blue-500 hover:underline">
+                  {p.href.includes("mikavohl.ca") ? p.href.replace(/^https?:\/\//, "") : "Github!"}
+                </span>
+                {p.href.includes("mikavohl.ca") ? "!" : null}
+              </p>
             </div>
           </a>
         ))}
