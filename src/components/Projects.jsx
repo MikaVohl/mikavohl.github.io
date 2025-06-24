@@ -5,10 +5,10 @@ export default function Projects() {
     <section id="projects" className="scroll-mt-[calc(5vh+29px)] py-20 text-center">
       <h2 className="mb-10 text-5xl font-medium">Projects</h2>
 
-      <div className="grid gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+      <div className="flex flex-wrap justify-center gap-6">
         {projects.map((p) => (
-          <a key={p.id} href={p.href} target="_blank" rel="noreferrer">
-            <div className="rounded-lg border border-gray-200 bg-white px-6 py-5 shadow-sm">
+          <a key={p.id} href={p.href} target="_blank" rel="noreferrer" className="w-full sm:w-80 md:w-[calc(50%-0.75rem)] lg:w-[calc(33.333%-1rem)]">
+            <div className="h-full rounded-lg border border-gray-200 bg-white px-6 py-5 shadow-sm">
               <h3 className="text-2xl font-semibold">
                 {p.title}
               </h3>

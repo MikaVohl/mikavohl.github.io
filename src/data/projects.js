@@ -6,6 +6,12 @@ const projects = [
     img: '/images/game-of-life-CNN.png',
   },
   {
+    title: 'Tensor Autograd Engine',
+    stack: 'Python / Numpy',
+    href: 'https://github.com/MikaVohl/MikaGrad',
+    img: '/images/computation_graph.png',
+  },
+  {
     title: 'Handwritten Code IDE',
     stack: 'Typescript / Python',
     href: 'https://github.com/MikaVohl/write-and-run',
