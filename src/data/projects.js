@@ -12,8 +12,8 @@ const projects = [
     img: "/images/computation_graph.png",
   },
   {
-    title: "Handwritten Code IDE",
-    stack: "Typescript / Python",
+    title: "Run Handwritten Code",
+    stack: "Typescript / React / Python",
     href: "https://github.com/MikaVohl/write-and-run",
     img: "/images/write-and-run.png",
   },
@@ -37,7 +37,7 @@ const projects = [
   },
   {
     title: "Websocket Chess",
-    stack: "TypeScript / Java",
+    stack: "TypeScript / React / Java",
     href: "http://chess.mikavohl.ca",
     img: "/images/chessGame.png",
   },
@@ -49,7 +49,7 @@ const projects = [
   },
   {
     title: "Amazon Web Scraping",
-    stack: "Python / BeautifulSoup",
+    stack: "Python / BeautifulSoup / Tkinter",
     href: "https://github.com/MikaVohl/AmazonProductScrape",
     img: "/images/webScrape.png",
   },
