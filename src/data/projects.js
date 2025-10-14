@@ -38,7 +38,7 @@ const projects = [
   {
     title: "Websocket Chess",
     stack: "TypeScript / React / Java",
-    href: "http://chess.mikavohl.ca",
+    href: "https://github.com/MikaVohl/chessBackend",
     img: "/images/chessGame.png",
   },
   {
