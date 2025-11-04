@@ -6,6 +6,12 @@ const projects = [
     img: "/images/game-of-life-CNN.png",
   },
   {
+    title: "Stitch - Learn Neural Nets",
+    stack: "Python / Pytorch / Typescript",
+    href: "https://github.com/MikaVohl/Stitch",
+    img: "/images/Stitch.jpg",
+  },
+  {
     title: "Tensor Autograd Engine",
     stack: "Python / Numpy",
     href: "https://github.com/MikaVohl/MikaGrad",
