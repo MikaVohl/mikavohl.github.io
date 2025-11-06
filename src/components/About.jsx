@@ -1,24 +1,31 @@
 export default function About() {
   return (
-    <section id="about" className="scroll-mt-[calc(9vh+35px)] py-20 md:py-24 text-center">
-      <h2 className="mb-10 text-5xl font-medium">About Me</h2>
-      <div className="mx-auto max-w-5xl flex flex-col md:flex-row md:items-center gap-10">
-        <div className="text-left text-gray-700 text-xl mx-10 md:mx-0">
+    <section
+      id="about"
+      className="scroll-mt-[calc(9vh+35px)] mt-8 py-12 text-left md:mt-10 md:py-16"
+    >
+      <h2 className="mb-10 text-5xl font-medium text-left">About Me</h2>
+      <div className="flex w-full flex-col gap-6 md:flex-row md:items-start md:justify-between md:gap-8">
+        <div className="text-left text-gray-700 text-xl md:flex-1">
           <p className="mb-6">
-            I'm passionate about building software that improves outcomes and solving the challenging problems along the way. With a lifelong goal of learning new things and building cool stuff, my path has often crossed projects in Machine Learning, Computer Science, and Physics.
+            I love building products, solving challenging problems, and learning new things. My interest and experience lies mostly in the domains of Machine Learning, Computer Science, and Physics.
           </p>
+          <p className="mb-2">
+            <strong>I'm currently:</strong>
+          </p>
+          <ul className="mb-6 list-disc space-y-2 pl-6">
+            <li>Researching <strong>machine learning imputation techniques</strong> in medical data with McGill AI Society</li>
+            <li>A <strong>fullstack developer</strong> for McHacks, McGill's largest hackathon</li>
+            <li>Part of the <strong>weekly ML reading group</strong> at McGill</li>
+          </ul>
           <p className="mb-6">
-            With hands-on experience through internships, personal projects, and coursework, I've sharpened my skills in
-            Python, Go, Java, JavaScript, SQL, and more. My current focus is on Machine Learning, particularly neural networks and large language models, using frameworks like PyTorch, TensorFlow, and NumPy.
-          </p>
-          <p>
-            I am always open to exploring new internship opportunities or collaborations. Feel free to connect with me on LinkedIn, send me an email, and check out my projects above!
+            Feel free to reach out and connect!
           </p>
         </div>
         <img
           src="/images/MikaVohl2.jpg"
           alt="Mika second portrait"
-          className="mx-auto w-4/5 md:w-full h-96 object-cover rounded-[10%]"
+          className="mx-auto h-80 w-3/4 rounded-[10%] object-cover md:mx-0 md:ml-auto md:w-[300px] md:flex-none"
         />
       </div>
     </section>

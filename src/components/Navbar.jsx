@@ -1,4 +1,4 @@
-import { FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa'
+import { FaGithub, FaLinkedin, FaEnvelope, FaXTwitter } from 'react-icons/fa6'
 import { SiDevpost } from 'react-icons/si'
 
 export default function Navbar() {
@@ -7,10 +7,11 @@ export default function Navbar() {
     { href: 'https://github.com/MikaVohl', icon: <FaGithub /> },
     { href: 'mailto:mikavohl@gmail.com', icon: <FaEnvelope /> },
     { href: 'https://devpost.com/mikavohl', icon: <SiDevpost /> },
+    { href: 'https://x.com/AmateurMika', icon: <FaXTwitter /> },
   ]
 
   return (
-    <nav className="fixed top-0 z-20 w-full font-semibold text-xl bg-white/95 backdrop-blur py-2">
+    <nav className="fixed top-0 z-20 w-full font-semibold text-xl bg-white/70 backdrop-blur-lg shadow-sm py-2">
       <div className="container mx-auto flex max-w-6xl items-center justify-between gap-6 px-4">
         <div className="flex items-center gap-4 text-2xl sm:text-3xl">
           {socials.map(({ href, icon }) => (
