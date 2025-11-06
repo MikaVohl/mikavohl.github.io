@@ -32,20 +32,20 @@ const projects = [
       "Execute your handwritten code in an online IDE. Winner of the 'Best Use of AI' award at Codejam 14.",
   },
   {
-    title: "Personal Knowledge Wiki",
-    stack: "Javascript / React / PostgreSQL",
-    href: "https://wiki.mikavohl.ca",
-    img: "/images/myWikiXS.png",
-    description:
-      "A personal wiki and knowledge management system with markdown support.",
-  },
-  {
     title: "LLM From Scratch",
     stack: "Python / Pytorch",
     href: "https://github.com/MikaVohl/gpt-from-scratch",
     img: "/images/transformer.png",
     description:
       "A miniature recreation of OpenAI's GPT-3, all from scratch using only Python and Pytorch.",
+  },
+  {
+    title: "Personal Knowledge Wiki",
+    stack: "Javascript / React / PostgreSQL",
+    href: "https://wiki.mikavohl.ca",
+    img: "/images/myWikiXS.png",
+    description:
+      "A personal wiki and knowledge management system with markdown support.",
   },
   {
     title: "iOS Recipe Manager",

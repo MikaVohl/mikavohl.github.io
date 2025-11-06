@@ -1,33 +1,12 @@
-import { FaGithub, FaLinkedin, FaEnvelope, FaXTwitter } from 'react-icons/fa6'
-import { SiDevpost } from 'react-icons/si'
+import SocialLinks from './SocialLinks'
 
 export default function Navbar() {
-  const socials = [
-    { href: 'https://www.linkedin.com/in/mikavohl/', icon: <FaLinkedin /> },
-    { href: 'https://github.com/MikaVohl', icon: <FaGithub /> },
-    { href: 'mailto:mikavohl@gmail.com', icon: <FaEnvelope /> },
-    { href: 'https://devpost.com/mikavohl', icon: <SiDevpost /> },
-    { href: 'https://x.com/AmateurMika', icon: <FaXTwitter /> },
-  ]
-
   return (
-    <nav className="fixed top-0 z-20 w-full font-semibold text-xl bg-white/70 backdrop-blur-lg shadow-sm py-2">
-      <div className="container mx-auto flex max-w-6xl items-center justify-between gap-6 px-4">
-        <div className="flex items-center gap-4 text-2xl sm:text-3xl">
-          {socials.map(({ href, icon }) => (
-            <a
-              key={href}
-              href={href}
-              target="_blank"
-              rel="noreferrer"
-              className="opacity-60 transition hover:opacity-100"
-            >
-              {icon}
-            </a>
-          ))}
-        </div>
+    <nav className="fixed top-0 z-20 w-full bg-white/70 py-2 font-semibold text-base backdrop-blur-lg shadow-sm sm:text-xl">
+      <div className="container mx-auto flex max-w-6xl flex-wrap items-center gap-3 px-3 sm:flex-nowrap sm:gap-6 sm:px-4">
+        <SocialLinks className="text-2xl sm:justify-start sm:text-3xl" />
 
-        <ul className="flex items-center gap-6">
+        <ul className="hidden flex-1 items-center justify-center gap-6 text-base sm:flex sm:text-xl">
           {[
             { id: 'intro', label: 'Home' },
             { id: 'projects', label: 'Projects' },
@@ -41,14 +20,16 @@ export default function Navbar() {
           ))}
         </ul>
 
-        <a
-          href="/MikaVohlResume.pdf"
-          target="_blank"
-          rel="noreferrer"
-          className="rounded-full border border-black/30 px-4 py-1 text-base font-medium text-black transition hover:border-black hover:bg-black hover:text-white"
-        >
-          Resume
-        </a>
+        <div className="flex justify-center sm:justify-end">
+          <a
+            href="/MikaVohlResume.pdf"
+            target="_blank"
+            rel="noreferrer"
+            className="rounded-full border border-black/30 px-3 py-1 text-sm font-medium text-black transition hover:border-black hover:bg-black hover:text-white sm:px-4 sm:text-base"
+          >
+            Resume
+          </a>
+        </div>
       </div>
     </nav>
   )
