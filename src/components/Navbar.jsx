@@ -20,14 +20,14 @@ export default function Navbar() {
           ))}
         </ul>
 
-        <div className="flex justify-center sm:justify-end">
+        <div className="ml-auto flex justify-end sm:ml-0">
           <a
             href="/MikaVohlResume.pdf"
             target="_blank"
             rel="noreferrer"
             className="rounded-full border border-black/30 px-3 py-1 text-sm font-medium text-black transition hover:border-black hover:bg-black hover:text-white sm:px-4 sm:text-base"
           >
-            Resume
+            My Resume
           </a>
         </div>
       </div>

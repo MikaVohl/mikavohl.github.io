@@ -2,10 +2,10 @@ export default function Intro() {
   return (
     <section
       id="intro"
-      className="scroll-mt-32 py-12 text-center md:py-20"
+      className="scroll-mt-32 py-8 text-center md:py-20"
     >
-      <div className="flex w-full max-w-5xl flex-col items-center gap-8 text-center md:flex-row md:items-center md:justify-between md:gap-16 md:text-left">
-        <div className="max-w-xl text-center md:text-left">
+      <div className="flex w-full max-w-5xl flex-col items-center gap-6 text-center md:flex-row md:items-center md:justify-between md:gap-16 md:text-left">
+        <div className="order-2 max-w-xl text-center md:order-1 md:text-left">
           <h2 className="text-5xl font-semibold md:text-6xl">Mika Vohl</h2>
           <h3 className="mt-5 text-lg text-gray-500 md:text-2xl">
             Computer Science and Physics @ McGill
@@ -13,7 +13,7 @@ export default function Intro() {
             Machine Learning & Software Engineer
           </h3>
         </div>
-        <picture className="flex-shrink-0">
+        <picture className="order-1 flex-shrink-0 md:order-2">
           {/* WebP first */}
           <source
             type="image/webp"
