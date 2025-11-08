@@ -2,8 +2,7 @@ import projects from "../data/projects";
 
 export default function Projects() {
   return (
-    <section id="projects" className="mt-0 pt-12 pb-10 md:pt-16 md:pb-14">
-      <h2 className="hidden text-left text-5xl font-medium sm:mb-10 sm:block">Projects</h2>
+    <section id="projects" className="scroll-mt-24 mt-0 pb-10 md:pb-14">
 
       <div className="flex flex-wrap justify-start gap-6">
         {projects.map((p, index) => (

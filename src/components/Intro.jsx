@@ -2,7 +2,7 @@ export default function Intro() {
   return (
     <section
       id="intro"
-      className="scroll-mt-32 py-8 text-center md:py-12"
+      className="scroll-mt-32 py-12 text-center md:py-20"
     >
       <div className="flex w-full max-w-5xl flex-col items-center gap-8 text-center md:flex-row md:items-center md:justify-between md:gap-16 md:text-left">
         <div className="max-w-xl text-center md:text-left">

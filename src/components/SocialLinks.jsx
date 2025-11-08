@@ -5,9 +5,9 @@ import { SiDevpost } from 'react-icons/si'
 const socials = [
   { href: 'https://www.linkedin.com/in/mikavohl/', icon: <FaLinkedin /> },
   { href: 'https://github.com/MikaVohl', icon: <FaGithub /> },
-  { href: 'mailto:mikavohl@gmail.com', icon: <FaEnvelope /> },
   { href: 'https://devpost.com/mikavohl', icon: <SiDevpost /> },
   { href: 'https://x.com/AmateurMika', icon: <FaXTwitter /> },
+  { href: 'mailto:mikavohl@gmail.com', icon: <FaEnvelope /> },
 ]
 
 export default function SocialLinks({ className = '', linkClassName = '' }) {
