@@ -12,7 +12,7 @@ const socials = [
 
 export default function SocialLinks({ className = '', linkClassName = '' }) {
   const container = `flex items-center gap-4 ${className}`.trim()
-  const link = `opacity-60 transition hover:opacity-100 ${linkClassName}`.trim()
+  const link = `opacity-60 transition hover:opacity-100 hover:scale-110 ${linkClassName}`.trim()
 
   return (
     <div className={container}>

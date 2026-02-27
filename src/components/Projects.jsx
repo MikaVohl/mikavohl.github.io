@@ -11,11 +11,11 @@ export default function Projects() {
             href={p.href}
             target="_blank"
             rel="noreferrer"
-            className={`w-full sm:w-[calc(50%-0.75rem)] lg:w-[calc(33.333%-1rem)] ${
+            className={`group w-full sm:w-[calc(50%-0.75rem)] lg:w-[calc(33.333%-1rem)] ${
               index >= 5 ? 'hidden sm:block' : ''
             }`}
           >
-            <div className="flex h-full flex-col rounded-lg border border-gray-200 bg-white px-5 py-4 text-left shadow-sm">
+            <div className="flex h-full flex-col rounded-lg border border-gray-200 bg-white px-5 py-4 text-left shadow-sm transition-all duration-300 group-hover:-translate-y-1 group-hover:border-gray-300 group-hover:shadow-md">
               <h3 className="text-2xl font-semibold leading-snug">{p.title}</h3>
               <h4 className="text-lg font-medium text-gray-500 leading-tight">{p.stack}</h4>
               <p className="mt-2 mb-3 text-base leading-relaxed text-gray-600">{p.description}</p>
