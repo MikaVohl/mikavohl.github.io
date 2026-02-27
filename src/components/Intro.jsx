@@ -1,10 +1,105 @@
+import { useRef, useEffect } from 'react';
+
+const ROWS = 16;
+const COLS = 50;
+const COUNT = ROWS * COLS;
+const CELL = 30;
+const RADIUS = 80; // brushstroke radius in px
+
+// gray-400 (156,163,175) → gray-700 (55,65,81)
+function lerpColor(t) {
+  return `rgb(${Math.round(156 - t * 101)},${Math.round(163 - t * 98)},${Math.round(175 - t * 94)})`;
+}
+
+function CrossGrid({ sectionRef }) {
+  const crossRefs = useRef([]);
+  const rafRef = useRef(null);
+  const rectRef = useRef(null);
+
+  useEffect(() => {
+    const section = sectionRef.current;
+    if (!section) return;
+
+    const updateRect = () => { rectRef.current = section.getBoundingClientRect(); };
+    updateRect();
+    window.addEventListener('resize', updateRect);
+
+    const handleMouseMove = (e) => {
+      if (rafRef.current) cancelAnimationFrame(rafRef.current);
+      rafRef.current = requestAnimationFrame(() => {
+        const rect = rectRef.current;
+        if (!rect) return;
+        const mx = e.clientX - rect.left;
+        const my = e.clientY - rect.top;
+        const gridOffsetX = rect.width - COLS * CELL;
+        const els = crossRefs.current;
+
+        for (let i = 0; i < els.length; i++) {
+          const el = els[i];
+          if (!el) continue;
+          const cx = gridOffsetX + (i % COLS) * CELL + CELL / 2;
+          const cy = ((i / COLS) | 0) * CELL + CELL / 2;
+          const dist = Math.sqrt((mx - cx) ** 2 + (my - cy) ** 2);
+          const t = Math.max(0, 1 - dist / RADIUS);
+
+          el.style.transition = 'none';
+          if (t > 0.01) {
+            el.style.transform = `rotate(${t * 45}deg) scale(${1 + t * 0.18})`;
+            el.style.color = lerpColor(t);
+          } else {
+            el.style.transform = '';
+            el.style.color = '';
+          }
+        }
+      });
+    };
+
+    const handleMouseLeave = () => {
+      if (rafRef.current) cancelAnimationFrame(rafRef.current);
+      const els = crossRefs.current;
+      for (let i = 0; i < els.length; i++) {
+        const el = els[i];
+        if (!el) continue;
+        // restore CSS transition — spring eases everything back to neutral
+        el.style.transition = '';
+        el.style.transform = '';
+        el.style.color = '';
+      }
+    };
+
+    section.addEventListener('mousemove', handleMouseMove);
+    section.addEventListener('mouseleave', handleMouseLeave);
+
+    return () => {
+      section.removeEventListener('mousemove', handleMouseMove);
+      section.removeEventListener('mouseleave', handleMouseLeave);
+      window.removeEventListener('resize', updateRect);
+      if (rafRef.current) cancelAnimationFrame(rafRef.current);
+    };
+  }, [sectionRef]);
+
+  return (
+    <div className="cross-grid">
+      {Array.from({ length: COUNT }).map((_, i) => (
+        <span key={i} ref={(el) => { crossRefs.current[i] = el; }} className="cross-sym">
+          +
+        </span>
+      ))}
+    </div>
+  );
+}
+
 export default function Intro() {
+  const sectionRef = useRef(null);
+
   return (
     <section
+      ref={sectionRef}
       id="intro"
-      className="scroll-mt-32 py-8 text-center md:py-20"
+      className="scroll-mt-32 py-8 text-center md:py-20 relative overflow-hidden"
     >
-      <div className="flex w-full max-w-5xl flex-col items-center gap-6 text-center md:flex-row md:items-center md:justify-between md:gap-16 md:text-left">
+      <CrossGrid sectionRef={sectionRef} />
+      <div className="relative z-10 pointer-events-none flex w-full max-w-5xl flex-col items-center gap-6 text-center md:flex-row md:items-center md:justify-between md:gap-16 md:text-left">
         <div className="order-2 max-w-xl text-center md:order-1 md:text-left">
           <h2 className="text-5xl font-semibold md:text-6xl">Mika Vohl</h2>
           <h3 className="mt-5 text-lg text-gray-500 md:text-2xl">
@@ -14,16 +109,8 @@ export default function Intro() {
           </h3>
         </div>
         <picture className="order-1 flex-shrink-0 md:order-2">
-          {/* WebP first */}
-          <source
-            type="image/webp"
-            srcSet="/images/MikaVohl_1x.webp 1x, /images/MikaVohl_2x.webp 2x"
-          />
-          {/* JPEG fallback */}
-          <source
-            type="image/jpeg"
-            srcSet="/images/MikaVohl_1x.jpg 1x, /images/MikaVohl_2x.jpg 2x"
-          />
+          <source type="image/webp" srcSet="/images/MikaVohl_1x.webp 1x, /images/MikaVohl_2x.webp 2x" />
+          <source type="image/jpeg" srcSet="/images/MikaVohl_1x.jpg 1x, /images/MikaVohl_2x.jpg 2x" />
           <img
             src="/images/MikaVohl_2x.jpg"
             width="352"
