@@ -24,6 +24,8 @@ export default function About() {
         <img
           src="/images/MikaVohl2.jpg"
           alt="Mika second portrait"
+          width={900}
+          height={675}
           className="mx-auto h-80 w-3/4 rounded-[10%] object-cover md:mx-0 md:ml-auto md:w-[300px] md:flex-none"
         />
       </div>
