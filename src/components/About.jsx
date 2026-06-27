@@ -13,9 +13,10 @@ export default function About() {
             <strong>I'm currently:</strong>
           </p>
           <ul className="mb-6 list-disc space-y-2 pl-6">
+            <li>Optimizing GPU kernels for AI inference at <strong>AMD</strong></li>
             <li>Researching <strong>machine learning imputation techniques</strong> in medical data with McGill AI Society</li>
             <li>A <strong>fullstack developer</strong> for McHacks, McGill's largest hackathon</li>
-            <li>Part of the <strong>weekly ML reading group</strong> at McGill</li>
+            {/* <li>Part of the <strong>weekly ML reading group</strong> at McGill</li> */}
           </ul>
           <p className="mb-6">
             Feel free to reach out and connect!
